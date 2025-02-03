@@ -1,8 +1,8 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import WelcomeScreen from "../screens/WelcomeScreen";
 import HomeScreen from "../screens/HomeScreen";
+import WelcomeScreen from "../screens/WelcomeScreen";
 
 const StackNavigation = () => {
   const Stack = createStackNavigator();
@@ -16,7 +16,13 @@ const StackNavigation = () => {
         }}
       />
 
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };

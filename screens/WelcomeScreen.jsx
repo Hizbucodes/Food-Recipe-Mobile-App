@@ -1,12 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
 import Animated, { useSharedValue, withSpring } from "react-native-reanimated";
-import { useNavigation } from "@react-navigation/native";
+import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 
 const WelcomeScreen = () => {
   const ringOnePadding = useSharedValue(0);

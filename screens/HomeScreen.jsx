@@ -1,11 +1,11 @@
-import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import React, { useEffect, useState } from "react";
-import { StatusBar } from "expo-status-bar";
 import Entypo from "@expo/vector-icons/Entypo";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import Categories from "../components/Categories";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import axios from "axios";
+import { StatusBar } from "expo-status-bar";
+import React, { useEffect, useState } from "react";
+import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import Categories from "../components/Categories";
 import Recipes from "../components/Recipes";
 
 const HomeScreen = () => {

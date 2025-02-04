@@ -1,14 +1,13 @@
+import MasonryList from "@react-native-seoul/masonry-list";
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
 import {
   ActivityIndicator,
-  Image,
   Pressable,
   StyleSheet,
   Text,
   View,
 } from "react-native";
-import React from "react";
-import MasonryList from "@react-native-seoul/masonry-list";
-import { useNavigation } from "@react-navigation/native";
 import Animated from "react-native-reanimated";
 
 const Recipes = ({ recipes, isLoading }) => {

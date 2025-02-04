@@ -1,12 +1,11 @@
+import React from "react";
 import {
   Image,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
 } from "react-native";
-import React from "react";
 import Animated, { FadeInDown } from "react-native-reanimated";
 
 const Categories = ({ activeCategory, handleChangeCategory, categories }) => {

@@ -5,20 +5,13 @@ import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
-  Image,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
-import Animated, {
-  FadeInDown,
-  FadeInLeft,
-  FadeInRight,
-  FadeInUp,
-  FadeOutUp,
-} from "react-native-reanimated";
+import Animated, { FadeInDown } from "react-native-reanimated";
 import YoutubeIframe from "react-native-youtube-iframe";
 
 const RecipeDetailScreen = () => {

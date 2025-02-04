@@ -8,19 +8,29 @@ import {
 } from "react-native";
 import React from "react";
 import MasonryList from "@react-native-seoul/masonry-list";
+import { useNavigation } from "@react-navigation/native";
+import Animated from "react-native-reanimated";
 
 const Recipes = ({ recipes, isLoading }) => {
+  const navigation = useNavigation();
   const RecipeItems = ({ item, index }) => {
     let isEven = index % 2 == 0;
     return (
       <Pressable
+        onPress={() =>
+          navigation.navigate("Meal-Detail", {
+            item: item,
+            title: item?.strMeal,
+          })
+        }
         style={{
           paddingLeft: isEven ? 0 : 8,
           paddingRight: isEven ? 8 : 0,
           marginVertical: 8,
         }}
       >
-        <Image
+        <Animated.Image
+          sharedTransitionTag={item?.idMeal}
           source={{ uri: item?.strMealThumb }}
           style={[styles.image, { height: index % 3 == 0 ? 200 : 300 }]}
         />

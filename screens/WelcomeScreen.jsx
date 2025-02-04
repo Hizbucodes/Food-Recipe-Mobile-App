@@ -21,7 +21,7 @@ const WelcomeScreen = () => {
     }, 100);
 
     setTimeout(() => {
-      navigation.navigate("Home");
+      navigation.replace("Home");
     }, 2000);
   }, []);
   return (

@@ -8,12 +8,20 @@ import {
 } from "react-native";
 import React from "react";
 import MasonryList from "@react-native-seoul/masonry-list";
+import { useNavigation } from "@react-navigation/native";
 
 const Recipes = ({ recipes, isLoading }) => {
+  const navigation = useNavigation();
   const RecipeItems = ({ item, index }) => {
     let isEven = index % 2 == 0;
     return (
       <Pressable
+        onPress={() =>
+          navigation.navigate("Meal-Detail", {
+            item: item,
+            title: item?.strMeal,
+          })
+        }
         style={{
           paddingLeft: isEven ? 0 : 8,
           paddingRight: isEven ? 8 : 0,

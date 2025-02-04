@@ -9,6 +9,7 @@ import {
 import React from "react";
 import MasonryList from "@react-native-seoul/masonry-list";
 import { useNavigation } from "@react-navigation/native";
+import Animated from "react-native-reanimated";
 
 const Recipes = ({ recipes, isLoading }) => {
   const navigation = useNavigation();
@@ -28,7 +29,8 @@ const Recipes = ({ recipes, isLoading }) => {
           marginVertical: 8,
         }}
       >
-        <Image
+        <Animated.Image
+          sharedTransitionTag={item?.idMeal}
           source={{ uri: item?.strMealThumb }}
           style={[styles.image, { height: index % 3 == 0 ? 200 : 300 }]}
         />

@@ -12,7 +12,13 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Animated, { FadeInDown } from "react-native-reanimated";
+import Animated, {
+  FadeInDown,
+  FadeInLeft,
+  FadeInRight,
+  FadeInUp,
+  FadeOutUp,
+} from "react-native-reanimated";
 import YoutubeIframe from "react-native-youtube-iframe";
 
 const RecipeDetailScreen = () => {
@@ -81,7 +87,12 @@ const RecipeDetailScreen = () => {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <StatusBar style="light" />
       <View>
-        <Image style={styles.image} source={{ uri: item?.strMealThumb }} />
+        <Animated.Image
+          entering={FadeInDown.duration(500).springify()}
+          sharedTransitionTag={item?.idMeal}
+          style={styles.image}
+          source={{ uri: item?.strMealThumb }}
+        />
       </View>
 
       <View style={styles.headerContainer}>
@@ -104,7 +115,7 @@ const RecipeDetailScreen = () => {
         />
       ) : (
         <Animated.View
-          entering={FadeInDown.duration(300).springify()}
+          entering={FadeInDown.duration(700).springify().damping(6)}
           style={styles.recipeDetailsContainer}
         >
           {recipes?.map((recipe) => (
